@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\webproje_yazokulu\\ProgramlamaYazProje.WebAPI\\ProgramlamaYazProje.WebAPI\\ProgramlamaYazProje.WebAPI.csproj": {}
+    "C:\\Users\\Oğuzhan Koca\\Desktop\\yazokuluprogramlamaprojeodevisonhali\\YazProgramlama\\ProgramlamaYazProje.WebAPI\\ProgramlamaYazProje.WebAPI\\ProgramlamaYazProje.WebAPI.csproj": {}
   },
   "projects": {
-    "C:\\webproje_yazokulu\\ProgramlamaYazProje.WebAPI\\ProgramlamaYazProje.WebAPI\\ProgramlamaYazProje.WebAPI.csproj": {
+    "C:\\Users\\Oğuzhan Koca\\Desktop\\yazokuluprogramlamaprojeodevisonhali\\YazProgramlama\\ProgramlamaYazProje.WebAPI\\ProgramlamaYazProje.WebAPI\\ProgramlamaYazProje.WebAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\webproje_yazokulu\\ProgramlamaYazProje.WebAPI\\ProgramlamaYazProje.WebAPI\\ProgramlamaYazProje.WebAPI.csproj",
+        "projectUniqueName": "C:\\Users\\Oğuzhan Koca\\Desktop\\yazokuluprogramlamaprojeodevisonhali\\YazProgramlama\\ProgramlamaYazProje.WebAPI\\ProgramlamaYazProje.WebAPI\\ProgramlamaYazProje.WebAPI.csproj",
         "projectName": "ProgramlamaYazProje.WebAPI",
-        "projectPath": "C:\\webproje_yazokulu\\ProgramlamaYazProje.WebAPI\\ProgramlamaYazProje.WebAPI\\ProgramlamaYazProje.WebAPI.csproj",
+        "projectPath": "C:\\Users\\Oğuzhan Koca\\Desktop\\yazokuluprogramlamaprojeodevisonhali\\YazProgramlama\\ProgramlamaYazProje.WebAPI\\ProgramlamaYazProje.WebAPI\\ProgramlamaYazProje.WebAPI.csproj",
         "packagesPath": "C:\\Users\\Oğuzhan Koca\\.nuget\\packages\\",
-        "outputPath": "C:\\webproje_yazokulu\\ProgramlamaYazProje.WebAPI\\ProgramlamaYazProje.WebAPI\\obj\\",
+        "outputPath": "C:\\Users\\Oğuzhan Koca\\Desktop\\yazokuluprogramlamaprojeodevisonhali\\YazProgramlama\\ProgramlamaYazProje.WebAPI\\ProgramlamaYazProje.WebAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -51,6 +51,16 @@
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[7.0.9, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.9, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",

@@ -1,83 +1,87 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using ProgramlamaYazProje.Models;
 
 namespace ProgramlamaYazProje.WebAPI.Controllers
 {
+    [ApiController]
+    [Route("api/[controller]")]
     public class CategoryController : Controller
     {
-        // GET: CategoryController
-        public ActionResult Index()
+        private readonly DatabaseContext _context;
+
+        public CategoryController(DatabaseContext context)
         {
-            return View();
+            _context = context;
+        }
+        
+        // GET: api/Category
+        [HttpGet]
+        public IEnumerable<Category> Details()
+        {
+            return _context.Categories.ToList();
         }
 
-        // GET: CategoryController/Details/5
-        public ActionResult Details(int id)
+        // GET: api/Category/id
+        [HttpGet("{id}")]
+        public Category Details(int id)
         {
-            return View();
+            return _context.Categories.Where(c => c.Id == id).Include(c => c.Animals).ThenInclude(a => a.Category).FirstOrDefault();
         }
 
-        // GET: CategoryController/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: CategoryController/Create
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        // POST: api/Category/AddCategory
+        [HttpPost("AddCategory")]
+        public void Create(Category category)
         {
             try
             {
-                return RedirectToAction(nameof(Index));
+                _context.Add(category);
+                _context.SaveChanges();
+                Console.WriteLine("Kategori eklendi");
             }
             catch
             {
-                return View();
+                Console.WriteLine("Kategori eklenemedi");
             }
         }
 
-        // GET: CategoryController/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
-
-        // POST: CategoryController/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        // POST: api/Category/UpdateCategory
+        [HttpPost("UpdateCategory")]
+        public void Edit(Category category)
         {
             try
             {
-                return RedirectToAction(nameof(Index));
+                _context.Update(category);
+                _context.SaveChanges();
             }
             catch
             {
-                return View();
+                Console.WriteLine("Kategori güncellenemedi");
             }
         }
 
-        // GET: CategoryController/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: CategoryController/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        // POST: api/Category/DeleteCategory
+        [HttpPost("DeleteCategory")]
+        public void Delete(Category category)
         {
             try
             {
-                return RedirectToAction(nameof(Index));
+                _context.Update(category);
+                _context.SaveChanges();
             }
             catch
             {
-                return View();
+                Console.WriteLine("Kategori silinemedi");
             }
+        }
+
+        // GET: api/Category/id
+        [HttpGet("DeleteCategory/{id}")]
+        public void Delete(int id)
+        {
+            Category category = _context.Categories.Where(a => a.Id == id).FirstOrDefault();
+            _context.Categories.Remove(category);
         }
     }
 }

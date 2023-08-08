@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using ProgramlamaYazProje.Models;
 
 namespace ProgramlamaYazProje.WebAPI.Controllers
@@ -15,106 +16,84 @@ namespace ProgramlamaYazProje.WebAPI.Controllers
             _context = context;
         }
 
-        /*
-        // GET: AnimalController
-        public ActionResult Index()
-        {
-            return View();
-        }
-
-        // GET: AnimalController/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
-
-        // GET: AnimalController/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: AnimalController/Create
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: AnimalController/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
-
-        // POST: AnimalController/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: AnimalController/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: AnimalController/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }*/
-
-        // GET: api/Animals
+        // GET: api/Animal
         [HttpGet]
-        public IEnumerable<Animal> GetAnimals()
+        public IEnumerable<Animal> Details()
         {
-            var animals = _context.Animals.ToList();
-
-            var animal = new Animal();
-            animal.Name = "ccikus0";
-            _context.Add(animal);
-
+            var animals = _context.Animals.Include(a => a.Category).ThenInclude(c => c.Animals).ToList();
             return animals;
         }
 
-        // GET animal/5
+        // GET: api/Animal/id
         [HttpGet("{id}")]
-        public IActionResult GetAnimal(int id)
+        public Animal Details(int id)
         {
-            var animal = _context.Animals.Where(a => a.Id == id).FirstOrDefault();
-            if (animal == null)
-            {
-                return NotFound();
-            }
+            var animals = _context.Animals.Include(a => a.Category).ThenInclude(c => c.Animals).AsQueryable();
+            return animals.Where(a => a.Id == id).FirstOrDefault();
+        }
 
-            return Ok(animal);
+        // GET: api/Animal/GetAnimalByKey/category
+        [HttpGet("GetAnimalByKey/{key}")]
+        public List<Animal> Details(string? key)
+        {
+            var animals = _context.Animals.Include(a => a.Category).ThenInclude(c => c.Animals).AsQueryable();
+            return animals.Where(a => a.Category.Name.ToLower() == key.ToLower()).ToList();
+        }
+
+        // POST: api/Animal/AddAnimal
+        [HttpPost("AddAnimal")]
+        public void Create(Animal animal)
+        {
+            try
+            {
+                _context.Add(animal);
+                _context.SaveChanges();
+                Console.WriteLine("Hayvan eklendi");
+            }
+            catch
+            {
+                Console.WriteLine("Hayvan eklenemedi");
+            }
+        }
+
+        // POST: api/Animal/UpdateAnimal
+        [HttpPost("UpdateAnimal")]
+        public void Edit(Animal animal)
+        {
+            try
+            {
+                animal.Category = null;
+                _context.Update(animal);
+                _context.SaveChanges();
+                Console.WriteLine("Hayvan güncellendi");
+            }
+            catch
+            {
+                Console.WriteLine("Hayvan güncellenemedi");
+            }
+        }
+
+        // POST: api/Animal/DeleteAnimal
+        [HttpPost("DeleteAnimal")]
+        public void Delete(Animal animal)
+        {
+            try
+            {
+                _context.Update(animal);
+                _context.SaveChanges();
+            }
+            catch
+            {
+                Console.WriteLine("Hayvan silinemedi");
+            }
+        }
+
+        // GET: api/Animal/id
+        [HttpGet("DeleteAnimal/{id}")]
+        public void Delete(int id)
+        {
+            Animal animal = _context.Animals.Where(a => a.Id == id).FirstOrDefault();
+            _context.Animals.Remove(animal);
         }
     }
 }
