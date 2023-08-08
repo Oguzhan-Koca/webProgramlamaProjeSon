@@ -1,0 +1,304 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="about.About" xml:space="preserve">
+    <value>Hakkında</value>
+  </data>
+  <data name="about.AboutDetail" xml:space="preserve">
+    <value>Ben Oğuzhan Koca bu sitenin kurucusuyum. Bu siteyi kurmamdaki amaç siz hayvan severlerin işini kolaylaştırmak ve hayvanlarımızın sahiplenme sürelerini kısaltarak onlara daha güzel zamanlar yaratabilmektir.</value>
+  </data>
+  <data name="about.Birthday" xml:space="preserve">
+    <value>Doğum Tarihi</value>
+  </data>
+  <data name="about.City" xml:space="preserve">
+    <value>Şehir</value>
+  </data>
+  <data name="about.Contact" xml:space="preserve">
+    <value>Bizimle İletişime Geç</value>
+  </data>
+  <data name="about.Job" xml:space="preserve">
+    <value>Bilgisayar Mühendisi</value>
+  </data>
+  <data name="about.MainText" xml:space="preserve">
+    <value>Merhaba sevgili hayvan severler Hayvan Barınağım projesi sizler için daha rahat bir şekilde hayvanlarınızı bağışlamanız ve başka hayvanları sahiplenmeniz için kurulmuştur.</value>
+  </data>
+  <data name="about.Phone" xml:space="preserve">
+    <value>Telefon</value>
+  </data>
+  <data name="admin.Add" xml:space="preserve">
+    <value>Ekle</value>
+  </data>
+  <data name="admin.AddAnimalCategory" xml:space="preserve">
+    <value>Hayvan Çeşit Ekle</value>
+  </data>
+  <data name="admin.AddOrRemoveAnimal" xml:space="preserve">
+    <value>Barınağa Hayvan Kabul ve Sahiplendirme İşlemleri</value>
+  </data>
+  <data name="admin.Process" xml:space="preserve">
+    <value>İşlem Yap</value>
+  </data>
+  <data name="admin.Title" xml:space="preserve">
+    <value>Admin İşlemleri</value>
+  </data>
+  <data name="animal.Add" xml:space="preserve">
+    <value>Ekle</value>
+  </data>
+  <data name="animal.Age" xml:space="preserve">
+    <value>Yaş</value>
+  </data>
+  <data name="animal.Category" xml:space="preserve">
+    <value>Cins</value>
+  </data>
+  <data name="animal.Name" xml:space="preserve">
+    <value>İsim</value>
+  </data>
+  <data name="animal.Photo" xml:space="preserve">
+    <value>Fotoğraf</value>
+  </data>
+  <data name="animal.ReturnList" xml:space="preserve">
+    <value>Listeye Geri Dön</value>
+  </data>
+  <data name="animal.Update" xml:space="preserve">
+    <value>Güncelle</value>
+  </data>
+  <data name="category.Name" xml:space="preserve">
+    <value>Çeşit İsmi</value>
+  </data>
+  <data name="category.Title" xml:space="preserve">
+    <value>Hayvan Çeşidi Ekle</value>
+  </data>
+  <data name="contact.Email" xml:space="preserve">
+    <value>E-posta</value>
+  </data>
+  <data name="contact.Loading" xml:space="preserve">
+    <value>Yükleniyor</value>
+  </data>
+  <data name="contact.Location" xml:space="preserve">
+    <value>Konum</value>
+  </data>
+  <data name="contact.Message" xml:space="preserve">
+    <value>Mesaj</value>
+  </data>
+  <data name="contact.Name" xml:space="preserve">
+    <value>İsim</value>
+  </data>
+  <data name="contact.Phone" xml:space="preserve">
+    <value>Telefon</value>
+  </data>
+  <data name="contact.Send" xml:space="preserve">
+    <value>Mesaj Gönder</value>
+  </data>
+  <data name="contact.Subject" xml:space="preserve">
+    <value>Konu</value>
+  </data>
+  <data name="contact.Success" xml:space="preserve">
+    <value>Mesajınız başarıyla bize ulaşmıştır!</value>
+  </data>
+  <data name="contact.Text" xml:space="preserve">
+    <value>Bizimle iletişime geçebilirsiniz :)</value>
+  </data>
+  <data name="identity.Login" xml:space="preserve">
+    <value>Lütfen Giriş Yapınız</value>
+  </data>
+  <data name="login.Login" xml:space="preserve">
+    <value>Giriş Yap</value>
+  </data>
+  <data name="login.Password" xml:space="preserve">
+    <value>Şifre</value>
+  </data>
+  <data name="page.About" xml:space="preserve">
+    <value>Hakkında</value>
+  </data>
+  <data name="page.AllRights" xml:space="preserve">
+    <value>Tüm Hakları Saklıdır</value>
+  </data>
+  <data name="page.AnimalAdd" xml:space="preserve">
+    <value>Hayvan Ekle</value>
+  </data>
+  <data name="page.animalDetail" xml:space="preserve">
+    <value>Hayvanın Bilgileri</value>
+  </data>
+  <data name="page.AnimalShelter" xml:space="preserve">
+    <value>Hayvan Barınağım</value>
+  </data>
+  <data name="page.Categories" xml:space="preserve">
+    <value>Kategoriler</value>
+  </data>
+  <data name="page.Contact" xml:space="preserve">
+    <value>İletişim</value>
+  </data>
+  <data name="page.Home" xml:space="preserve">
+    <value>Anasayfa</value>
+  </data>
+  <data name="page.Language" xml:space="preserve">
+    <value>Dil</value>
+  </data>
+  <data name="page.Login" xml:space="preserve">
+    <value>Giriş</value>
+  </data>
+  <data name="page.Logout" xml:space="preserve">
+    <value>Çıkış</value>
+  </data>
+  <data name="page.Register" xml:space="preserve">
+    <value>Kayıt</value>
+  </data>
+  <data name="profile.NewPassword" xml:space="preserve">
+    <value>Yeni Şifre</value>
+  </data>
+  <data name="profile.NewUsername" xml:space="preserve">
+    <value>Yeni Kullanıcı Adı</value>
+  </data>
+  <data name="profile.Required" xml:space="preserve">
+    <value>Alan Zorunlu</value>
+  </data>
+  <data name="profile.Save" xml:space="preserve">
+    <value>Kaydet</value>
+  </data>
+  <data name="profile.Settings" xml:space="preserve">
+    <value>Profil Ayarları</value>
+  </data>
+  <data name="profile.SuccessPassword" xml:space="preserve">
+    <value>Şifre Güncellendi!</value>
+  </data>
+  <data name="register.Register" xml:space="preserve">
+    <value>Kayıt Ol</value>
+  </data>
+  <data name="register.RePassword" xml:space="preserve">
+    <value>Şifre Tekrarı</value>
+  </data>
+  <data name="wait.AnimalName" xml:space="preserve">
+    <value>Hayvan İsmi</value>
+  </data>
+  <data name="wait.Cross" xml:space="preserve">
+    <value>Reddet</value>
+  </data>
+  <data name="wait.Member" xml:space="preserve">
+    <value>Üye</value>
+  </data>
+  <data name="wait.ProcessTable" xml:space="preserve">
+    <value>Bekleyen İşlemler</value>
+  </data>
+  <data name="wait.Status" xml:space="preserve">
+    <value>Durumu</value>
+  </data>
+  <data name="wait.Tick" xml:space="preserve">
+    <value>Onayla</value>
+    <comment>1</comment>
+  </data>
+</root>
