@@ -1,0 +1,15 @@
+﻿@page
+@model LoginModel
+@inject IStringLocalizer<Lang> _localizer
+
+<div class="row" style="margin-top:10%;">
+    <div class="col-md-4">
+        <section>
+            <h1>@_localizer["identity.Login"]</h1>
+        </section>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
