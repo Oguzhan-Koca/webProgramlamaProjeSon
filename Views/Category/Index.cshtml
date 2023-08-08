@@ -1,0 +1,32 @@
+﻿@model IEnumerable<ProgramlamaYazProje.Models.Animal>
+
+@{
+    ViewData["Title"] = "Category_Index";
+}
+
+<!-- ======= Gallery Section ======= -->
+<div class="p-2"></div>
+<section id="gallery" class="gallery" style="margin-top:120px">
+
+    <div class="container-fluid">
+        @ViewBag.PageHome
+        @ViewBag.PageAbout
+        <div class="row gy-4 justify-content-center">
+            @if (Model.Count() > 0)
+            {
+                @foreach (var item in Model)
+                {
+                    <div class="col-xl-3 col-lg-4 col-md-6" style="width:250px; height:200px;">
+                        <div class="gallery-item" style="width:100%; height:100%;">
+                            <img src="@item.PhotoURL" class="img-fluid" alt="" style="width:100%; height:100%;">
+                            <div class="gallery-links d-flex align-items-center justify-content-center">
+                                <a href="@item.PhotoURL" title=@item.Name class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
+                                <a asp-controller="Animal" asp-action="Detail" asp-route-id=@item.Id class="details-link"><i class="bi bi-link-45deg"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</section><!-- End Gallery Section -->

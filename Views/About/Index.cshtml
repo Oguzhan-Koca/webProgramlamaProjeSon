@@ -1,0 +1,47 @@
+﻿@inject IStringLocalizer<Lang> _localizer
+
+@{
+    ViewData["Title"] = "AboutIndex";
+}
+
+<h1>@_localizer["page.About"]</h1>
+<div class="page-header d-flex align-items-center">
+    <div class="container position-relative">
+        <div class="row d-flex justify-content-center">
+            <div class="col-lg-6 text-center">
+                <h2>@_localizer["page.About"]</h2>
+                <p>@_localizer["about.MainText"]</p>
+                <a class="cta-btn" asp-action="Index" asp-controller="Contact">@_localizer["about.Contact"]</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ======= About Section ======= -->
+<section id="about" class="about">
+    <div class="container">
+
+        <div class="row gy-4 justify-content-center">
+            <div class="col-lg-4">
+                <img src="assets/img/gallery/ben.jpg" style="height:65%; width:85%;" class="img-fluid" alt="">
+            </div>
+            <div class="col-lg-5 content">
+                <h2>@_localizer["about.Job"]</h2>
+                <p class="fst-italic py-3">
+                    @_localizer["about.AboutDetail"]
+                </p>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <ul>
+                            <li><i class="bi bi-chevron-right"></i> <strong>@_localizer["about.Birthday"]:</strong> <span>02.08.2000</span></li>
+                            <li><i class="bi bi-chevron-right"></i> <strong>@_localizer["about.Phone"]:</strong> <span>+90 546 251 3496</span></li>
+                            <li><i class="bi bi-chevron-right"></i> <strong>@_localizer["about.City"]:</strong> <span>İstanbul / Türkiye</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+<!-- End About Section -->

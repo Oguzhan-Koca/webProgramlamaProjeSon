@@ -1,0 +1,51 @@
+﻿@inject IStringLocalizer<Lang> _localizer
+
+@Model ProgramlamaYazProje.Models.ApplyViewModel
+
+<!-- Begin Page Content -->
+<div class="container-fluid">
+    <!-- Page Heading -->
+    <h1 class="h3 mb-2 text-gray-800">.</h1>
+    <p class="mb-4">
+        .
+    </p>
+
+    <!-- DataTales Example -->
+    <div class=" shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="  m-0 font-weight-bold text-light">@_localizer["wait.ProcessTable"]</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <form id ="waitForm" method="post">
+                    <table class=" table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>@_localizer["wait.AnimalName"]</th>
+                                <th>@_localizer["wait.Status"]</th>
+                                <th>@_localizer["wait.Member"]</th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.Animals)
+                            {
+                                <tr>
+                                    <input type="hidden" name="id" value="@item.Id"/>
+                                    <td>@item.Name</td>
+                                    <td>@item.Status</td>
+                                    <td>@item.UserName</td>
+                                    <td><button type="submit" name="control" value="tick" class="btn btn-primary form-control">@_localizer["wait.Tick"]</button></td>
+                                    <td><button type="submit" name="control" value="cross" class="btn btn-primary form-control">@_localizer["wait.Cross"]</button></td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- /.container-fluid -->

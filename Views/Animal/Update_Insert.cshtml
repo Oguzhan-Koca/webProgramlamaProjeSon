@@ -1,0 +1,82 @@
+﻿@model ProgramlamaYazProje.Models.AnimalViewModel
+@inject IStringLocalizer<Lang> _localizer
+
+@{
+    ViewData["Title"] = "Hayvan oluştur";
+}
+
+<div class="page-header d-flex align-items-center">
+    <div class="container position-relative">
+        <div class="row d-flex justify-content-center">
+            <div class="col-lg-6 text-center">
+                <h2>@_localizer["page.AnimalAdd"]</h2> 
+            </div>
+        </div>
+    </div>
+</div>
+
+<form method="post" enctype="multipart/form-data">
+    <div class="row p-3 border">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="Animal" />
+
+        <div class="col-8 pt-4">
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="Animal.Name">@_localizer["animal.Name"]</label>
+                </div>
+                <div class="col-4">
+                    <input asp-for="Animal.Name" class="form-control" />
+                    <span asp-validation-for="Animal.Name" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="Animal.Age">@_localizer["animal.Age"]</label>
+                </div>
+                <div class="col-4">
+                    <input asp-for="Animal.Age" class="form-control" />
+                    <span asp-validation-for="Animal.Age" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="Animal.CategoryId">@_localizer["animal.Category"]</label>
+                </div>
+                <div class="col-4">
+                    <div class="col-8">
+                        @Html.DropDownListFor(a=>a.Animal.CategoryId, Model.CategoryList,
+                        "Tür", new { @class="form-control"})
+                        <span asp-validation-for="Animal.CategoryId" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-4">
+                    <label name="image">@_localizer["animal.Photo"]</label>
+                </div>
+                <div class="col-4">
+                    <div class="col-4">
+                        <input type="file" id="image" name="image" accept="image/*">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-4 offset-4">
+                    @if (Model.Animal == null)
+                    {
+                        <button type="submit" class="btn btn-primary form-control">@_localizer["animal.Add"]</button>
+                    }
+                    else
+                    {
+                        <button type="submit" class="btn btn-primary form-control">@_localizer["animal.Update"]</button>
+                    }
+                </div>
+                <div class="col-4 offset-4">
+                    <a asp-action="Index" asp-controller="Home" class="btn btn-success form-control">@_localizer["animal.ReturnList"]</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

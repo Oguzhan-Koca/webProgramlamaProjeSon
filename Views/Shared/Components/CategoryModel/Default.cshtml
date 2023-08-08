@@ -1,0 +1,12 @@
+﻿@model IEnumerable<ProgramlamaYazProje.Models.Category>
+@inject IStringLocalizer<Lang> _localizer
+<div class="dropdown">
+    <a asp-action="Index" asp-controller="Category"><span>@_localizer["page.Categories"]</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+        @foreach (var item in Model)
+        {
+            <li><a class="dropdown-item" asp-action="Index" asp-controller="Category" asp-route-key=@item.Name>@item.Name</a></li>
+        }
+    </ul>
+</div>

@@ -1,0 +1,47 @@
+﻿@inject IStringLocalizer<Lang> _localizer
+@model RegisterViewModel
+
+@{
+    ViewData["Title"] = "Register";
+}
+
+
+<div class="page-header d-flex align-items-center">
+    <div class="container position-relative">
+        <div class="row d-flex justify-content-center">
+            <div class="col-lg-6 text-center">
+                <h2>@ViewData["Title"]</h2>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-4 offset-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger small"></div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Email" class="form-label">@_localizer["contact.Email"] / @_localizer["contact.Name"]</label>
+                <input asp-for="Email" class="form-control" placeholder="oguzhan@gmail.com" />
+                <span asp-validation-for="Email" class="text-danger small"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Password" class="form-label">@_localizer["login.Password"]</label>
+                <input asp-for="Password" type="password" class="form-control" placeholder="******" />
+                <span asp-validation-for="Password" class="text-danger small"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="ConfirmPassword" class="form-label">@_localizer["register.RePassword"]</label>
+                <input asp-for="ConfirmPassword" type="password" class="form-control" placeholder="******" />
+                <span asp-validation-for="ConfirmPassword" class="text-danger small"></span>
+            </div>
+            
+            <div class="form-group d-grid mb-3">
+                <button type="submit" class="btn btn-primary d-block"><i class="fa-solid fa-paper-plane me-2"></i>@_localizer["register.Register"]</button>
+            </div>
+        </form>
+    </div>
+</div>

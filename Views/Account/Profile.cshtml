@@ -1,0 +1,63 @@
+﻿@inject IStringLocalizer<Lang> _localizer
+
+@{
+    ViewData["Title"] = "Profile";
+}
+
+<div class="page-header d-flex align-items-center">
+    <div class="container position-relative">
+        <div class="row d-flex justify-content-center">
+            <div class="col-lg-6 text-center">
+                <h2>@_localizer["profile.Settings"]</h2>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="card bg-dark">
+                <div class="card-body -dark">
+                    <form method="post" asp-action="ProfileChangeFullName">
+                        <div class="form-group">
+                            <label class="form-label small text-white">@_localizer["profile.NewUsername"]<span class="badge bg-danger ms-2">@_localizer["profile.Required"]</span></label>
+                            <div class="input-group mb-3">
+                                <input name="fullname" type="text" class="form-control" placeholder="" />
+                                <button class="btn btn-secondary" type="submit"><i class="fa-solid fa-floppy-disk me-2"></i>@_localizer["profile.Save"]</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card bg-dark">
+                <div class="card-body -dark">
+                    <form method="post" asp-action="ProfileChangePassword">
+                        <div class="form-group">
+                            <label class="form-label small text-white">@_localizer["profile.NewPassword"]<span class="badge bg-danger ms-2">@_localizer["profile.Required"]</span></label>
+                            <div class="input-group mb-3">
+                                <input name="password" type="password" class="form-control" placeholder="" />
+                                <button class="btn btn-secondary" type="submit"><i class="fa-solid fa-floppy-disk me-2"></i>@_localizer["profile.Save"]</button>
+                            </div>
+                            @if (ViewData["result"] != null && ViewData["result"] == "PasswordChanged")
+                            {
+                                <span class="text-success small">@_localizer["profile.SuccessPassword"]</span>
+                            }
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    @if (ViewData["result"] != null && ViewData["result"] == "PasswordChanged")
+    {
+        <script>
+            toastr["success"]("Şireniz değiştirilmiştir.", "Şifre Değişti!");
+        </script>
+    }
+}

@@ -1,0 +1,55 @@
+﻿@Model ProgramlamaYazProje.Models.Animal
+@inject IStringLocalizer<Lang> _localizer
+<main id="main" data-aos="fade" data-aos-delay="1500">
+
+    <!-- ======= End Page Header ======= -->
+    <div class="page-header d-flex align-items-center">
+        <div class="container position-relative">
+            <div class="row d-flex justify-content-center">
+                <div class="col-lg-6 text-center">
+                    <h2>@Model.Name</h2>
+                </div>
+            </div>
+        </div>
+    </div><!-- End Page Header -->
+    <!-- ======= Gallery Single Section ======= -->
+    <section id="gallery-single" class="gallery-single">
+        <div class="container">
+
+            <div class="row justify-content-between gy-0 mt-4">
+                <div class="col-lg-2">  </div>
+                <div class="col-lg-4">
+                    <div class="position-relative h-100">
+                        <div class="slides-1 portfolio-details-slider swiper">
+                            <div class="swiper-wrapper align-items-center">
+                                <div class="swiper-slide">
+                                    <img src="@Model.PhotoURL" alt="">
+                                </div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="portfolio-info">
+                        <h3>@_localizer["page.animalDetail"]</h3>
+                        <ul>
+                            <li><strong>İsmi</strong> <span>@Model.Name</span></li>
+                            <li><strong>Cinsi</strong> <span>@Model.Category.Name</span></li>
+                            <li><strong>Yaşı</strong> <span>@Model.Age</span></li>
+                            <form id="animalForm" method="post">
+                                <input type="hidden" name=@Model.Id value="@Model.Id" />
+                                <li><button type="submit" class="btn-visit align-self-start">Sahiplenme Talebinde Bulun</button></li>
+                            </form>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2">  </div>
+
+            </div>
+
+        </div>
+    </section><!-- End Gallery Single Section -->
+
+</main><!-- End #main -->
